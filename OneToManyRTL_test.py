@@ -37,30 +37,30 @@ class TestHarness( Component ):
     return s.src.line_trace() + " > " + s.dut.line_trace() + " > " + s.sink.line_trace()
 
 #-------------------------------------------------------------------------
-# test_0
-#-------------------------------------------------------------------------
-# If we send in a zero then dut should produce no messages
-
-def test_1_to_1( cmdline_opts ):
-
-  th = TestHarness()
-
-  th.set_param( "top.src.construct",  msgs=[Bits8(0)] )
-  th.set_param( "top.sink.construct", msgs=[] )
-
-  run_sim( th, cmdline_opts, duts=['dut'] )
-
-#-------------------------------------------------------------------------
 # test_1
 #-------------------------------------------------------------------------
 # If we send in a one then dut should produce one message
 
-def test_1_to_1( cmdline_opts ):
+def test_1( cmdline_opts ):
 
   th = TestHarness()
 
   th.set_param( "top.src.construct",  msgs=[Bits8(1)] )
   th.set_param( "top.sink.construct", msgs=[Bits8(1)] )
+
+  run_sim( th, cmdline_opts, duts=['dut'] )
+
+#-------------------------------------------------------------------------
+# test_0
+#-------------------------------------------------------------------------
+# If we send in a zero then dut should produce no messages
+
+def test_0( cmdline_opts ):
+
+  th = TestHarness()
+
+  th.set_param( "top.src.construct",  msgs=[Bits8(0)] )
+  th.set_param( "top.sink.construct", msgs=[] )
 
   run_sim( th, cmdline_opts, duts=['dut'] )
 
