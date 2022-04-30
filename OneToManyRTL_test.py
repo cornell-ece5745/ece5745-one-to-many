@@ -37,11 +37,11 @@ class TestHarness( Component ):
     return s.src.line_trace() + " > " + s.dut.line_trace() + " > " + s.sink.line_trace()
 
 #-------------------------------------------------------------------------
-# test_1
+# test_01
 #-------------------------------------------------------------------------
 # If we send in a one then dut should produce one message
 
-def test_1( cmdline_opts ):
+def test_01( cmdline_opts ):
 
   th = TestHarness()
 
@@ -51,11 +51,11 @@ def test_1( cmdline_opts ):
   run_sim( th, cmdline_opts, duts=['dut'] )
 
 #-------------------------------------------------------------------------
-# test_0
+# test_00
 #-------------------------------------------------------------------------
 # If we send in a zero then dut should produce no messages
 
-def test_0( cmdline_opts ):
+def test_00( cmdline_opts ):
 
   th = TestHarness()
 
@@ -65,11 +65,11 @@ def test_0( cmdline_opts ):
   run_sim( th, cmdline_opts, duts=['dut'] )
 
 #-------------------------------------------------------------------------
-# test_2
+# test_02
 #-------------------------------------------------------------------------
 # If we send in a two then dut should produce two messages (2,1)
 
-def test_2( cmdline_opts ):
+def test_02( cmdline_opts ):
 
   th = TestHarness()
 
@@ -79,11 +79,11 @@ def test_2( cmdline_opts ):
   run_sim( th, cmdline_opts, duts=['dut'] )
 
 #-------------------------------------------------------------------------
-# test_3
+# test_03
 #-------------------------------------------------------------------------
 # If we send in a two then dut should produce two messages (3,2,1)
 
-def test_3( cmdline_opts ):
+def test_03( cmdline_opts ):
 
   th = TestHarness()
 
